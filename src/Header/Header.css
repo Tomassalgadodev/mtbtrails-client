@@ -1,0 +1,50 @@
+header {
+    height: 60px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    height: 40%;
+    position: absolute;
+    left: 30px;
+    top: 15px
+}
+
+.nav-button-container {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: 200px;
+}
+
+.nav-button-container a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2b381f;
+}
+
+header a:hover {
+    cursor: pointer;
+}
+
+header button {
+    position: absolute;
+    right: 30px;
+    font-weight: 500;
+    font-size: 13px;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 500px;
+}
+
+header button:hover {
+    cursor: pointer;
+    transition: .5s;
+    background-color: rgba(21,27,13,.16);
+}
