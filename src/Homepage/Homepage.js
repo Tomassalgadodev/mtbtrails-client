@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Homepage.css";
 
-const Homepage = () => {
+const Homepage = ({ coords, loadingCurrentLocation }) => {
 
     const [formValue, setFormValue] = useState('');
 
@@ -25,6 +25,8 @@ const Homepage = () => {
                     onChange={handleChange} 
                 />
                 <button>Submit</button>
+                {!loadingCurrentLocation && <h1>{coords.lat}</h1>}
+                {loadingCurrentLocation && <h1>Getting current location...</h1>}
             </form>
         </div>
     )
