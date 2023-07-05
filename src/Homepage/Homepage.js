@@ -30,7 +30,18 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
         try {
             const response = await fetch(fetchURL, options);
             const data = await response.json();
-            setTrailData(data.data);
+
+            const sortedData = data.data.sort((a, b) => {
+                if (a.thumbnail != null && b.thumbnail != null) {
+                    return 0;
+                } else if (a.thumbnail == null) {
+                    return 1;
+                } else if (b.thumbnail == null) {
+                    return -1;
+                }
+            });
+            
+            setTrailData(sortedData);
             setLoadingTrailData(false);
         } catch (err) {
             console.log(err);
@@ -56,15 +67,16 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
                     onChange={handleChange} 
                 />
                 <button>Submit</button>
-                {!loadingTrailData && 
-                    // Display trail data
-                    <h1>{coords.lat}</h1>
-                }
-                {loadingTrailData && 
-                    // Display loading trail data
-                    <h1>Getting current location...</h1>
-                }
             </form>
+            {!loadingTrailData && 
+                // Display trail data
+                <h1>{coords.lat}</h1>
+            }
+            {loadingTrailData && 
+                // Display loading trail data
+                <h1>Getting current location...</h1>
+            }
+            <h1>Local favorites near you</h1>
         </div>
     )
 }
