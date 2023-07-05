@@ -11,6 +11,16 @@
     background-position: center;
 }
 
+.difficulty-rating-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.difficulty-rating-wrapper img {
+    height: 15px;
+    margin-right: 4px;
+}
+
 .trail-card p {
     margin: 0;
     white-space: nowrap;

@@ -16,7 +16,7 @@ const TrailCardContainer = ({ trailData }) => {
                 thumbnail={trail.thumbnail}
             />
         )
-    })
+    }).splice(0, 4);
 
     return (
         <div>
