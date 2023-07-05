@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Homepage.css";
 
+import TrailCardContainer from "../TrailCardContainer/TrailCardContainer";
+
 const Homepage = ({ coords, loadingCurrentLocation }) => {
 
     const [formValue, setFormValue] = useState('');
@@ -31,15 +33,10 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
             const response = await fetch(fetchURL, options);
             const data = await response.json();
 
-            const sortedData = data.data.sort((a, b) => {
-                if (a.thumbnail != null && b.thumbnail != null) {
-                    return 0;
-                } else if (a.thumbnail == null) {
-                    return 1;
-                } else if (b.thumbnail == null) {
-                    return -1;
-                }
-            });
+            const sortedData = data.data.filter(trail => trail.thumbnail)
+                .sort((a, b) => {
+                    return b.rating - a.rating;
+                });
             
             setTrailData(sortedData);
             setLoadingTrailData(false);
@@ -51,8 +48,6 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
     useEffect(() => {
         if (!loadingCurrentLocation) {
             getTrails(coords);
-        } else {
-            console.log('loading');
         }
     }, [loadingCurrentLocation]);
 
@@ -77,6 +72,9 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
                 <h1>Getting current location...</h1>
             }
             <h1>Local favorites near you</h1>
+            <TrailCardContainer 
+                trailData={trailData}
+            />
         </div>
     )
 }
