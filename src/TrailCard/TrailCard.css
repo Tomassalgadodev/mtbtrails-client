@@ -1,0 +1,16 @@
+.trail-card {
+    width: 300px;
+    height: 300px;
+}
+
+.thumbnail-wrapper {
+    height: 200px;
+    width: 100%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.trail-card p {
+    margin: 0;
+}
