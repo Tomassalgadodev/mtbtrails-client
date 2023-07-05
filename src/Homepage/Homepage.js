@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Homepage.css";
 
-import TrailCard from "../TrailCard/TrailCard";
+import TrailCardContainer from "../TrailCardContainer/TrailCardContainer";
 
 const Homepage = ({ coords, loadingCurrentLocation }) => {
 
@@ -53,8 +53,6 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
     useEffect(() => {
         if (!loadingCurrentLocation) {
             getTrails(coords);
-        } else {
-            console.log('loading');
         }
     }, [loadingCurrentLocation]);
 
@@ -79,7 +77,9 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
                 <h1>Getting current location...</h1>
             }
             <h1>Local favorites near you</h1>
-            <TrailCard />
+            <TrailCardContainer 
+                trailData={trailData}
+            />
         </div>
     )
 }

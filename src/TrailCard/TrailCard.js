@@ -1,9 +1,15 @@
 import React from "react";
 import './TrailCard.css';
 
-const TrailCard = () => {
+const TrailCard = ({ name, difficulty, rating, location, length, thumbnail }) => {
     return (
-        <h1>TrailCard</h1>
+        <div>
+            <img src={thumbnail} />
+            <p>{difficulty + ' • ' + rating}</p>
+            <p>{name}</p>
+            <p>{location}</p>
+            <p>{'Length: ' + length + ' mi'}</p>
+        </div>
     )
 }
 
