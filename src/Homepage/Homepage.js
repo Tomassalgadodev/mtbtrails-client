@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Homepage.css";
 
+import TrailCard from "../TrailCard/TrailCard";
+
 const Homepage = ({ coords, loadingCurrentLocation }) => {
 
     const [formValue, setFormValue] = useState('');
@@ -77,6 +79,7 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
                 <h1>Getting current location...</h1>
             }
             <h1>Local favorites near you</h1>
+            <TrailCard />
         </div>
     )
 }
