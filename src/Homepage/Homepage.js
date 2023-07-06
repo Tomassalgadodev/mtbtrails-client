@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Homepage.css";
 
 import TrailCardContainer from "../TrailCardContainer/TrailCardContainer";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Homepage = ({ coords, loadingCurrentLocation }) => {
 
@@ -63,6 +64,7 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
                 />
                 <button>Submit</button>
             </form>
+            <SearchBar />
             {!loadingTrailData && 
                 // Display trail data
                 <h1>{coords.lat}</h1>

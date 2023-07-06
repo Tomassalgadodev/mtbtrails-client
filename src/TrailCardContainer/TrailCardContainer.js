@@ -5,9 +5,10 @@ import TrailCard from "../TrailCard/TrailCard";
 
 const TrailCardContainer = ({ trailData }) => {
 
-    const trailCards = trailData.map(trail => {
+    const trailCards = trailData.map((trail, idx) => {
         return (
             <TrailCard 
+                key={idx}
                 name={trail.name}
                 difficulty={trail.difficulty}
                 rating={trail.rating}
