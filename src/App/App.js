@@ -15,7 +15,7 @@ function App() {
       navigator.geolocation.getCurrentPosition(position => {
         setCurrentLocation({
           lat: position.coords.latitude,
-          long: position.coords.longitude
+          lng: position.coords.longitude
         });
         setLoadingCurrentLocation(false);
       });
