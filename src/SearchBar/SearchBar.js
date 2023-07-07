@@ -8,7 +8,9 @@ import {
     geocodeByAddress,
     geocodeByPlaceId,
     getLatLng,
-  } from 'react-places-autocomplete';
+} from 'react-places-autocomplete';
+
+import { useNavigate } from 'react-router-dom';
 
 const libraries = [ 'places' ];
 
@@ -20,10 +22,13 @@ const SearchBar = () => {
         lng: null
     });
 
+    const navigate = useNavigate();
+
     const handleSelect = async value => {
         const results = await geocodeByAddress(value);
         const coords = await getLatLng(results[0]);
         console.log(coords);
+        navigate('/location/' + coords.lat + '/' + coords.lng + '/' + value);
         setAddress(value);
         setCoordinates(coords);
     }
