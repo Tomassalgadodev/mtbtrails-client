@@ -8,6 +8,7 @@ import './index.css';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import SearchBar from './SearchBar/SearchBar';
+import LocationDetailsPage from './LocationDetailsPage/LocationDetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: '/test',
-    element: <SearchBar />
+    path: '/location/:lat/:lng/:name',
+    element: <LocationDetailsPage />
   }
 ]);
 
