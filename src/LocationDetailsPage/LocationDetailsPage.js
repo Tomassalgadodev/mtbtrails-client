@@ -26,6 +26,7 @@ const LocationDetailsPage = () => {
 
     return (
         <div>
+            <div>Trails near {name}</div>
             {loadingTrailData && <div>Loading...</div>}
             {!loadingTrailData && trailData.toString()}
         </div>
