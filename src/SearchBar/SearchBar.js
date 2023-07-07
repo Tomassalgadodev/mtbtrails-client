@@ -46,7 +46,7 @@ const SearchBar = () => {
                 <div>
                     <input
                     {...getInputProps({
-                        placeholder: 'Search Places ...',
+                        placeholder: 'Search by city, park or trail name',
                         className: 'location-search-input',
                     })}
                     />
