@@ -1,6 +1,6 @@
 export const getTrails = async (coords) => {
 
-    const fetchURL = `https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=${coords.lat}&lon=${coords.long}`;
+    const fetchURL = `https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=${coords.lat}&lon=${coords.lng}`;
     const options = {
         method: 'GET',
         headers: {
