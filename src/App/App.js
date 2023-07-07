@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+// require('dotenv').config();
+
 
 import Header from '../Header/Header';
 import Homepage from '../Homepage/Homepage';
