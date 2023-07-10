@@ -35,10 +35,7 @@ const SearchBar = () => {
 
 
     return (
-        <LoadScript
-            googleMapsApiKey={process.env.REACT_APP_API_KEY}
-            libraries={libraries}
-        >
+        <div>
             <p>Lat: {coordinates.lat}</p>
             <p>Lon: {coordinates.lng}</p>
             <p>Address: {address}</p>
@@ -81,8 +78,7 @@ const SearchBar = () => {
                 </div>
                 )}
             </PlacesAutocomplete>
-
-        </LoadScript>
+        </div>
     )
 }
 
