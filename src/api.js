@@ -19,8 +19,6 @@ export const getTrails = async (coords) => {
             });
             
         return sortedData;
-        // setTrailData(sortedData);
-        // setLoadingTrailData(false);
     } catch (err) {
         console.log(err);
     }
