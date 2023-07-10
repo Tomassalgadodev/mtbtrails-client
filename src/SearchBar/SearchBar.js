@@ -57,7 +57,7 @@ const SearchBar = () => {
                     />
                     <div className="autocomplete-dropdown-container">
                     {loading && <div>Loading...</div>}
-                    {suggestions.map(suggestion => {
+                    {suggestions.map((suggestion, idx) => {
                         const className = suggestion.active
                         ? 'suggestion-item--active'
                         : 'suggestion-item';
@@ -71,6 +71,7 @@ const SearchBar = () => {
                             className,
                             style,
                             })}
+                            key={idx}
                         >
                             <span>{suggestion.description}</span>
                         </div>
