@@ -36,6 +36,7 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
             <h1>Local favorites near you</h1>
             <TrailCardContainer 
                 trailData={trailData}
+                numberToDisplay={4}
             />
         </div>
     )

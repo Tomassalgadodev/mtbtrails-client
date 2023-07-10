@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { getTrails } from '../api';
 import './LocationDetailsPage.css';
 
+import Header from '../Header/Header';
+import TrailCardContainer from "../TrailCardContainer/TrailCardContainer";
+
 const LocationDetailsPage = () => {
 
     const [loadingTrailData, setLoadingTrailData] = useState(true);
@@ -26,9 +29,15 @@ const LocationDetailsPage = () => {
 
     return (
         <div>
+            <Header />
             <div>Trails near {name}</div>
             {loadingTrailData && <div>Loading...</div>}
-            {!loadingTrailData && trailData.toString()}
+            {!loadingTrailData &&
+                <TrailCardContainer 
+                    trailData={trailData} 
+                    numberToDisplay={50}
+                />
+            }
         </div>
     );
 }
