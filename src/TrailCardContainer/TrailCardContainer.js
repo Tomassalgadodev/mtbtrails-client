@@ -3,7 +3,7 @@ import './TrailCardContainer.css';
 
 import TrailCard from "../TrailCard/TrailCard";
 
-const TrailCardContainer = ({ trailData }) => {
+const TrailCardContainer = ({ trailData, numberToDisplay }) => {
 
     let trailCards;
 
@@ -20,7 +20,7 @@ const TrailCardContainer = ({ trailData }) => {
                     thumbnail={trail.thumbnail}
                 />
             )
-        }).splice(0, 4);
+        }).splice(0, numberToDisplay);
     }
 
     return (
