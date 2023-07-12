@@ -9,6 +9,7 @@ import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import SearchBar from './SearchBar/SearchBar';
 import LocationDetailsPage from './LocationDetailsPage/LocationDetailsPage';
+import TrailDetailsPage from './TrailDetailsPage/TrailDetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/location/:lat/:lng/:name',
     element: <LocationDetailsPage />
+  },
+  {
+    path: '/trail/:id',
+    element: <TrailDetailsPage />
   }
 ]);
 
