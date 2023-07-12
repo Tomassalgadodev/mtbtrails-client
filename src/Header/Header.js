@@ -1,11 +1,18 @@
 import React from 'react';
 import './Header.css';
 import headerLogo from '../assets/header-logo.png';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
     return (
         <header>
-            <img src={headerLogo} />
+            <img 
+                src={headerLogo} 
+                onClick={() => navigate('/')}
+            />
             <div className='nav-button-container'>
                 <a>Explore</a>
                 <a>Community</a>
