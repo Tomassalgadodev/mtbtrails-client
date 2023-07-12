@@ -18,6 +18,7 @@ const TrailCardContainer = ({ trailData, numberToDisplay }) => {
                     location={trail.city}
                     length={trail.length}
                     thumbnail={trail.thumbnail}
+                    id={trail.id}
                 />
             )
         }).splice(0, numberToDisplay);

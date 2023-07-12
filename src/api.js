@@ -43,7 +43,6 @@ export const getTrail = async (id) => {
         const response = await fetch(fetchURL, options);
         const data = await response.json();
 
-        console.log(data);
         return data;
     } catch (err) {
         console.log(err);
