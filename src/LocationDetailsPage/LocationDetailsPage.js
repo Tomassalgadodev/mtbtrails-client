@@ -20,7 +20,7 @@ const LocationDetailsPage = () => {
     const mapCenter = { lat: Number(lat), lng: Number(lng) }
     
     const pageLoadHandler = async () => {
-        const data = await getTrails(coords, '3');
+        const data = await getTrails(coords);
         console.log(data);
         setTrailData(data);
         setLoadingTrailData(false);
