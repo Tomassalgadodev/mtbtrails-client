@@ -20,7 +20,7 @@ const LocationDetailsPage = () => {
     const mapCenter = { lat: Number(lat), lng: Number(lng) }
     
     const pageLoadHandler = async () => {
-        const data = await getTrails(coords);
+        const data = await getTrails(coords, '3');
         console.log(data);
         setTrailData(data);
         setLoadingTrailData(false);
@@ -53,9 +53,7 @@ const LocationDetailsPage = () => {
     return (
         <div>
             <Header />
-            <GoogleMap zoom={10} center={mapCenter} mapContainerStyle={{ maxWidth: '1200px', height: '700px', margin: '0 auto 0 auto', marginTop: '70px' }}>
-                {/* <MarkerF position={mapCenter} title={name}>
-                </MarkerF> */}
+            <GoogleMap zoom={12} center={mapCenter} mapContainerStyle={{ maxWidth: '1200px', height: '700px', margin: '0 auto 0 auto', marginTop: '70px' }}>
                 {trailMarkers}
             </GoogleMap>
             <div>Trails near {name}</div>

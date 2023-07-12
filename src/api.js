@@ -1,6 +1,10 @@
-export const getTrails = async (coords) => {
+export const getTrails = async (coords, radius) => {
 
-    const fetchURL = `https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=${coords.lat}&lon=${coords.lng}`;
+    if (!radius) {
+        radius = '25';
+    }
+
+    const fetchURL = `https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=${coords.lat}&lon=${coords.lng}&radius=${radius}`;
     const options = {
         method: 'GET',
         headers: {
