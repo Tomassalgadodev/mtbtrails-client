@@ -3,6 +3,10 @@
     height: 300px;
 }
 
+.trail-card:hover {
+    cursor: pointer;
+}
+
 .thumbnail-wrapper {
     height: 200px;
     width: 100%;

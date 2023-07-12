@@ -27,3 +27,24 @@ export const getTrails = async (coords, radius) => {
         console.log(err);
     }
 }
+
+export const getTrail = async (id) => {
+
+    const fetchURL = `https://trailapi-trailapi.p.rapidapi.com/trails/${id}`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '23091ce880msh32853f28162dd0bp17dc3fjsn85b6b58e5faa',
+            'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(fetchURL, options);
+        const data = await response.json();
+
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+}
