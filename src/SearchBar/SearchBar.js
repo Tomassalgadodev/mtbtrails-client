@@ -47,7 +47,7 @@ const SearchBar = () => {
                 onSelect={handleSelect}
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                <div>
+                <div className='search-bar'>
                     <div className="input-wrapper">
                         <img src={searchIcon} className='search-icon'/>
                         <input
@@ -56,8 +56,8 @@ const SearchBar = () => {
                             className: 'location-search-input',
                         })}
                         />
-                        <button className='search-button' />
                         <img src={searchArrow} className='search-arrow' />
+                        <button className='search-button' />
                     </div>
                     <div className="autocomplete-dropdown-container">
                     {loading && <div>Loading...</div>}
@@ -77,7 +77,7 @@ const SearchBar = () => {
                             })}
                             key={idx}
                         >
-                            <span>{suggestion.description}</span>
+                            <span className='suggestion-text'>{suggestion.description}</span>
                         </div>
                         );
                     })}

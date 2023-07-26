@@ -1,3 +1,7 @@
+.search-bar {
+    position: relative;
+}
+
 .location-search-input {
     height: 70px;
     width: 600px;
@@ -6,14 +10,16 @@
     border: none;
     padding: 10px 60px 10px 60px;
     font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.location-search-input:active {
-    border: none;
+.location-search-input:focus {
+    outline: none;
 }
 
 .input-wrapper {
     position: relative;
+    z-index: 2;
 }
 
 .search-icon {
@@ -48,4 +54,57 @@
     top: 50%;
     transform: translateY(-50%);
     right: 26px;
+    z-index: 10;
+}
+
+.search-arrow:hover {
+    cursor: pointer;
+}
+
+.search-arrow:hover + .search-button {
+    background-color: #2b381f;
+    transition: .5s;
+}
+
+.autocomplete-dropdown-container {
+    background-color: #acacac;
+    position: absolute;
+    height: 500px;
+    width: 600px;
+    top: 35px;
+    padding-top: 35px;
+    z-index: 1;
+    border-radius: 0 0 20px 20px;
+}
+
+.suggestion-item {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.suggestion-item--active {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.suggestion-text {
+    font-size: 20px;
+    white-space: nowrap;
+    width: 600px;
+    overflow: hidden;
+}
+
+.location-search-input:focus ~ .autocomplete-dropdown-container {
+    display: block;
+    background-color: aqua;
+}
+
+.hidden {
+    display: none;
 }
