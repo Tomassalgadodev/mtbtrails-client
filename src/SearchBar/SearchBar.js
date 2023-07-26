@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 import { LoadScript } from "@react-google-maps/api";
+import searchIcon from '../assets/magnifying-glass-icon.png';
+import searchArrow from '../assets/search-arrow.png';
 
 import PlacesAutocomplete from 'react-places-autocomplete';
 
@@ -36,9 +38,9 @@ const SearchBar = () => {
 
     return (
         <div>
-            <p>Lat: {coordinates.lat}</p>
+            {/* <p>Lat: {coordinates.lat}</p>
             <p>Lon: {coordinates.lng}</p>
-            <p>Address: {address}</p>
+            <p>Address: {address}</p> */}
             <PlacesAutocomplete
                 value={address}
                 onChange={setAddress}
@@ -46,12 +48,17 @@ const SearchBar = () => {
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                 <div>
-                    <input
-                    {...getInputProps({
-                        placeholder: 'Search by city, park or trail name',
-                        className: 'location-search-input',
-                    })}
-                    />
+                    <div className="input-wrapper">
+                        <img src={searchIcon} className='search-icon'/>
+                        <input
+                        {...getInputProps({
+                            placeholder: 'Search by city, park or trail name',
+                            className: 'location-search-input',
+                        })}
+                        />
+                        <button className='search-button' />
+                        <img src={searchArrow} className='search-arrow' />
+                    </div>
                     <div className="autocomplete-dropdown-container">
                     {loading && <div>Loading...</div>}
                     {suggestions.map((suggestion, idx) => {

@@ -1,0 +1,7 @@
+.search-bar-backdrop {
+    height: 500px;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

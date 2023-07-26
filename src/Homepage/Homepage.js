@@ -24,7 +24,9 @@ const Homepage = ({ coords, loadingCurrentLocation }) => {
 
     return (
         <div>
-            <SearchBar />
+            <div className="search-bar-backdrop">
+                <SearchBar />
+            </div>
             {!loadingTrailData && 
                 // Display trail data
                 <h1>{coords.lat}</h1>
